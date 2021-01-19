@@ -10,7 +10,7 @@ function setup() {
 }
 
 function draw() {
-  background("grey");
+  background("black");
   moveBall();
   displayBall();
 }
@@ -43,7 +43,7 @@ function moveBall(){
 function displayBall(){
   for (let ball of theBouncy){
     noStroke();
-    fill(theBouncy.theColor);
+    fill(ball.theColor);
     ellipse(ball.x,ball.y,ball.diameter,ball.diameter);
   }
   
