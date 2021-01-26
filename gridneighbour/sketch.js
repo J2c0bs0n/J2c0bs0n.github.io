@@ -1,11 +1,17 @@
 // Grid Neighbours
 
-let grid = createEmptyGrid(10, 10);
+let grid = createEmptyGrid(2, 2);
 let cellWidth, cellHeight, rows, cols;
+let bgmusic;
 
+function preload(){
+  bgmusic = loadSound("assets/song18.mp3");
+  //from https://opengameart.org/content/crystal-cave-song18
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  bgmusic.loop();
   rows = grid.length;
   cols = grid[0].length;
   cellWidth = width/cols;
