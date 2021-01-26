@@ -1,12 +1,15 @@
 // Grid Neighbours
 
-let grid = createEmptyGrid(2, 2);
+let grid = createEmptyGrid(3, 3);
 let cellWidth, cellHeight, rows, cols;
 let bgmusic;
+let bgSound;
 
 function preload(){
   bgmusic = loadSound("assets/song18.mp3");
   //from https://opengameart.org/content/crystal-cave-song18
+  bgSound = loadSound("assets/soundeffect/click3.wav");
+  //from https://opengameart.org/content/51-ui-sound-effects-buttons-switches-and-clicks
 }
 
 function setup() {
@@ -26,6 +29,8 @@ function draw() {
 function mousePressed(){
   let x = Math.floor(mouseX / cellWidth); 
   let y = Math.floor(mouseY / cellHeight);
+
+  bgSound.play();;
 
   toggleCell(x, y); //self
   toggleCell(x, y-1); //north
