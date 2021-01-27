@@ -55,7 +55,7 @@ function displayGrid(){
   for(let y=0; y<rows; y++){
     for (let x=0; x<cols; x++){
       if (grid[y][x] === 0){
-        fill ("blue");
+        fill ("red");
       }
       if(grid[y][x] === 1){
         fill("green");
