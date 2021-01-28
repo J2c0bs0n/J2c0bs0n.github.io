@@ -73,5 +73,7 @@ function displayLetterOrName(){
     grid[2+1][4+1] = 1;
     grid[1+1][3+1] = 1;
     grid[1+1][2+1] = 1;
+  }if (letterOrNumber === "b"){
+
   }
 }
