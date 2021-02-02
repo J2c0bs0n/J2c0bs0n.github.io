@@ -48,6 +48,10 @@ function keyPressed(){
         letterOrNumber = prompt("Type one letter or number please!");
         return letterOrNumber;
     }
+    else if (key === "`" ){
+      letterOrNumber = prompt("Put in a number or letter again please!");
+      return letterOrNumber;
+    }
 }
 function displayLetterOrName(){
   if (letterOrNumber === "a"){
@@ -366,5 +370,97 @@ function displayLetterOrName(){
     grid[8][4] = 1;
     grid[8][5] = 1;
     grid[8][6] = 1;
+  }
+  if (letterOrNumber === "1"){
+    grid[3][3] = 1;
+    grid[2][4] = 1;
+    grid[3][4] = 1;
+    grid[4][4] = 1;
+    grid[5][4] = 1;
+    grid[6][4] = 1;
+    grid[7][4] = 1;
+    grid[8][4] = 1;
+  }
+  if (letterOrNumber === "2"){
+    grid[2][4] = 1;
+    grid[2][5] = 1;
+    grid[2][6] = 1;
+    grid[3][3] = 1;
+    grid[3][7] = 1;
+    grid[4][7] = 1;
+    grid[5][6] = 1;
+    grid[6][5] = 1;
+    grid[7][4] = 1;
+    grid[8][3] = 1;
+    grid[8][4] = 1;
+    grid[8][5] = 1;
+    grid[8][6] = 1;
+    grid[8][7] = 1;
+  }
+  if (letterOrNumber === "3"){
+    grid[1][3] = 1;
+    grid[1][4] = 1;
+    grid[1][5] = 1;
+    grid[2][6] = 1;
+    grid[3][6] = 1;
+    grid[4][6] = 1;
+    grid[5][3] = 1;
+    grid[5][4] = 1;
+    grid[5][5] = 1;
+    grid[6][6] = 1;
+    grid[7][6] = 1;
+    grid[8][6] = 1;
+    grid[9][3] = 1;
+    grid[9][4] = 1;
+    grid[9][5] = 1;
+  }
+  if (letterOrNumber === "4"){
+    grid[1][2] = 1;
+    grid[2][2] = 1;
+    grid[3][2] = 1;
+    grid[4][2] = 1;
+    grid[5][2] = 1;
+    grid[5][3] = 1;
+    grid[5][4] = 1;
+    grid[5][5] = 1;
+    grid[5][6] = 1;
+  }
+  if (letterOrNumber === "5"){
+    
+  }
+  if (letterOrNumber === "6"){
+    
+  }
+  if (letterOrNumber === "7"){
+    
+  }
+  if (letterOrNumber === "8"){
+    grid[1][3] = 1;
+    grid[1][4] = 1;
+    grid[1][5] = 1;
+    grid[2][6] = 1;
+    grid[3][6] = 1;
+    grid[4][6] = 1;
+    grid[5][3] = 1;
+    grid[5][4] = 1;
+    grid[5][5] = 1;
+    grid[6][6] = 1;
+    grid[7][6] = 1;
+    grid[8][6] = 1;
+    grid[9][3] = 1;
+    grid[9][4] = 1;
+    grid[9][5] = 1;
+    grid[2][2] = 1;
+    grid[3][2] = 1;
+    grid[4][2] = 1;
+    grid[6][2] = 1;
+    grid[7][2] = 1;
+    grid[8][2] = 1;
+  }
+  if (letterOrNumber === "9"){
+    
+  }
+  if (letterOrNumber === "0"){
+    
   }
 }
