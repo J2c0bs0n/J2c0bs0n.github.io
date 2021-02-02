@@ -45,32 +45,33 @@ function createEmptyGrid(cols, rows) {
   }
 function keyPressed(){
     if (key === " "){
-        letterOrNumber = prompt("Type one letter or number please!");
-        return letterOrNumber;
+      letterOrNumber = prompt("Type one letter or number please!");
+      return letterOrNumber;
     }
     else if (key === "`" ){
+      createEmptyGrid();
       letterOrNumber = prompt("Put in a number or letter again please!");
       return letterOrNumber;
     }
 }
 function displayLetterOrName(){
   if (letterOrNumber === "a"){
-    grid[7+1][4+1] = 1;
-    grid[7+1][3+1] = 1;
-    grid[7+1][2+1] = 1;
-    grid[6+1][1+1] = 1;
-    grid[5+1][1+1] = 1;
-    grid[4+1][1+1] = 1;
-    grid[3+1][4+1] = 1;
-    grid[3+1][3+1] = 1;
-    grid[3+1][2+1] = 1;
-    grid[6+1][1+1] = 1;
-    grid[6+1][4+1] = 1;
-    grid[5+1][4+1] = 1;
-    grid[4+1][4+1] = 1;
-    grid[2+1][4+1] = 1;
-    grid[1+1][3+1] = 1;
-    grid[1+1][2+1] = 1;
+    grid[8][5] = 1;
+    grid[8][4] = 1;
+    grid[8][3] = 1;
+    grid[7][2] = 1;
+    grid[6][2] = 1;
+    grid[5][2] = 1;
+    grid[4][5] = 1;
+    grid[4][4] = 1;
+    grid[4][3] = 1;
+    grid[7][2] = 1;
+    grid[7][5] = 1;
+    grid[6][5] = 1;
+    grid[5][5] = 1;
+    grid[3][5] = 1;
+    grid[2][4] = 1;
+    grid[2][3] = 1;
   }if (letterOrNumber === "b"){
     grid[8][2] = 1;
     grid[7][2] = 1;
@@ -415,24 +416,73 @@ function displayLetterOrName(){
     grid[9][5] = 1;
   }
   if (letterOrNumber === "4"){
-    grid[1][2] = 1;
-    grid[2][2] = 1;
-    grid[3][2] = 1;
-    grid[4][2] = 1;
-    grid[5][2] = 1;
+    grid[1][3] = 1;
+    grid[2][3] = 1;
+    grid[3][3] = 1;
+    grid[4][3] = 1;
     grid[5][3] = 1;
     grid[5][4] = 1;
     grid[5][5] = 1;
     grid[5][6] = 1;
+    grid[4][6] = 1;
+    grid[3][6] = 1;
+    grid[2][6] = 1;
+    grid[1][6] = 1;
+    grid[6][6] = 1;
+    grid[7][6] = 1;
+    grid[8][6] = 1;
   }
   if (letterOrNumber === "5"){
-    
+    grid[1][6] = 1;
+    grid[1][5] = 1;
+    grid[1][4] = 1;
+    grid[1][3] = 1;
+    grid[1][2] = 1;
+    grid[2][2] = 1;
+    grid[3][2] = 1;
+    grid[4][2] = 1;
+    grid[4][3] = 1;
+    grid[4][4] = 1;
+    grid[4][5] = 1;
+    grid[5][6] = 1;
+    grid[6][6] = 1;
+    grid[7][6] = 1;
+    grid[8][5] = 1;
+    grid[8][4] = 1;
+    grid[8][3] = 1;
+    grid[8][2] = 1;
   }
   if (letterOrNumber === "6"){
-    
+    grid[5][2] = 1;
+    grid[4][2] = 1;
+    grid[3][2] = 1;
+    grid[2][2] = 1;
+    grid[6][2] = 1;
+    grid[7][3] = 1;
+    grid[7][4] = 1;
+    grid[7][5] = 1;
+    grid[6][6] = 1;
+    grid[5][6] = 1;
+    grid[4][5] = 1;
+    grid[4][3] = 1;
+    grid[4][4] = 1;
+    grid[1][4] = 1;
+    grid[1][5] = 1;
+    grid[1][3] = 1;
   }
   if (letterOrNumber === "7"){
-    
+    grid[1][6] = 1;
+    grid[1][2] = 1;
+    grid[1][3] = 1;
+    grid[1][4] = 1;
+    grid[1][5] = 1;
+    grid[1][7] = 1;
+    grid[2][7] = 1;
+    grid[3][6] = 1;
+    grid[4][5] = 1;
+    grid[5][4] = 1;
+    grid[6][3] = 1;
+    grid[7][2] = 1;
   }
   if (letterOrNumber === "8"){
     grid[1][3] = 1;
@@ -458,9 +508,50 @@ function displayLetterOrName(){
     grid[8][2] = 1;
   }
   if (letterOrNumber === "9"){
-    
+    grid[4][5] = 1;
+    grid[5][5] = 1;
+    grid[6][5] = 1;
+    grid[7][5] = 1;
+    grid[8][5] = 1;
+    grid[3][4] = 1;
+    grid[3][3] = 1;
+    grid[6][4] = 1;
+    grid[6][3] = 1;
+    grid[4][2] = 1;
+    grid[5][2] = 1;
+    grid[9][3] = 1;
+    grid[9][4] = 1;
   }
   if (letterOrNumber === "0"){
-    
+    grid[2][2] = 1;
+    grid[3][2] = 1;
+    grid[4][2] = 1;
+    grid[5][2] = 1;
+    grid[6][2] = 1;
+    grid[7][2] = 1;
+    grid[2][6] = 1;
+    grid[3][6] = 1;
+    grid[4][6] = 1;
+    grid[5][6] = 1;
+    grid[6][6] = 1;
+    grid[7][6] = 1;
+    grid[8][5] = 1;
+    grid[8][4] = 1;
+    grid[8][3] = 1;
+    grid[1][5] = 1;
+    grid[1][4] = 1;
+    grid[1][3] = 1;
+    grid[3][3] = 1;
+    grid[4][4] = 1;
+    grid[5][4] = 1;
+    grid[6][5] = 1;
+  }
+  if (letterOrNumber === "love"){
+    textSize(20);
+    stroke("black")
+    fill("grey");
+    text("You are loved user! Please know that, even if it doesn't seem like it.", mouseX, mouseY);
+    grid[4][2] = 1;
+    grid[5][2] = 1;
   }
 }
