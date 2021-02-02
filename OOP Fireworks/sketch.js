@@ -1,4 +1,5 @@
-//Template
+// OOP Fireworks
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
