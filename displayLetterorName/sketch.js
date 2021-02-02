@@ -49,7 +49,7 @@ function keyPressed(){
       return letterOrNumber;
     }
     else if (key === "`" ){
-      createEmptyGrid();
+      grid = createEmptyGrid(10, 10);
       letterOrNumber = prompt("Put in a number or letter again please!");
       return letterOrNumber;
     }
