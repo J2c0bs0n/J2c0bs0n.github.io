@@ -594,11 +594,14 @@ function displayLetterOrName(){
   }
   
   if (letterOrNumber === "love"){
+    
     textSize(20);
     stroke("black")
     fill("grey");
     text("You are loved user! Please know that, even if it doesn't seem like it.", mouseX, mouseY);
-    grid[4][2] = 1;
-    grid[5][2] = 1;
+    grid = createEmptyGrid(15,15);
+    return grid;
+    grid[4][1] = 1;
+    grid[5][1] = 1;
   }
 }
