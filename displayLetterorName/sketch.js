@@ -1,19 +1,20 @@
-let grid, rows, cols, cellWidth, cellHeight;
+//Austin Connell
+//Mr. Schellenberg
+//Computer Science 30
+//February 4 2021
 
-// let bgMusic;
+let grid, rows, cols, cellWidth, cellHeight;
 
 let clickSound;
 
 let letterOrNumber;
 
 function preload() {
-    // bgMusic = loadSound("assets/background.mp3");
     clickSound = loadSound("assets/soundeffect/click3.wav");
   }
 
   function setup() {
     createCanvas(windowWidth, windowHeight);
-    // bgMusic.loop();
     grid = createEmptyGrid(10, 10);
     rows = grid.length;
     cols = grid[0].length;
