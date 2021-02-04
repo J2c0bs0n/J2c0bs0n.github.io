@@ -3,31 +3,32 @@
 //Computer Science 30
 //February 4 2021
 
+let counter = 0; //this is what keeps track of how many times one of the keys is pressed
+
 let grid, rows, cols, cellWidth, cellHeight;
 
-let clickSound;
+let letterOrNumber; //this is what makes the assignment work
 
-let letterOrNumber;
+let mil = 5000;
 
-function preload() {
-    clickSound = loadSound("assets/soundeffect/click3.wav");
-  }
-
-  function setup() {
-    createCanvas(windowWidth, windowHeight);
-    grid = createEmptyGrid(10, 10);
-    rows = grid.length;
-    cols = grid[0].length;
-    cellWidth = width/cols;
-    cellHeight = height/rows;
-  }
-
-  function draw() {
-    background(220);
-    displayGrid();
-    displayLetterOrName();
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  grid = createEmptyGrid(10, 10);
+  rows = grid.length;
+  cols = grid[0].length;
+  cellWidth = width/cols;
+  cellHeight = height/rows;
 }
 
+function draw() {
+  background(220);
+  displayGrid();
+  displayLetterOrName();
+  counterCheckUp();
+}
+
+
+//this function is what displays the 10 x 10 grid
 function displayGrid() {
     for (let y=0; y<rows; y++) {
       for (let x=0; x<cols; x++) {
@@ -41,7 +42,7 @@ function displayGrid() {
       }
     }
   }
-
+ //this function is what makes the grid empty (hence it's name)
 function createEmptyGrid(cols, rows) {
     let empty = [];
     for (let y=0; y<rows; y++) {
@@ -53,18 +54,62 @@ function createEmptyGrid(cols, rows) {
     return empty;
   }
 
+//these buttons allow you to control what happen
+//when either key are pressed, they will ask for a letter or number
+//when you put in a letter or number, it will display it into the
+//10 x 10 grid
 function keyPressed(){
-    if (key === " "){
+    if (key === " "){ //this is for starting the program
+      counter += 1;
       letterOrNumber = prompt("Type one letter or number please!");
       return letterOrNumber;
     }
-    else if (key === "`" ){
+    else if (key === "`" ){ //this is used for restarting the program without having to reload the page/ program itself
+      counter += 1;
       grid = createEmptyGrid(10, 10);
       letterOrNumber = prompt("Put in a number or letter again please! Also, there will be a slight delay every time you press this button.");
       return letterOrNumber;
     }
 }
 
+function counterCheckUp(){
+  if (counter === 100){
+    textSize(20);
+    stroke("black");
+    fill("grey");
+    text("You have pressed one of the two buttons 100 times! Congrats!", mouseX, mouseY);
+  }
+  else if (counter === 5){
+    textSize(20);
+    stroke("black");
+    fill("grey");
+    text("Please stop", mouseX, mouseY);
+  }
+  else if (counter === 15){
+    textSize(20);
+    stroke("black");
+    fill("grey");
+    text("Ok, if this is a joke, it's no longer funny", mouseX, mouseY);
+  }
+  else if (counter === 25){
+    textSize(20);
+    stroke("black");
+    fill("grey");
+    text("Stop", mouseX, mouseY);
+  }
+  else if (counter === 1){
+    textSize(20);
+    stroke("black");
+    fill("grey");
+    text("That's it, no more fun for you", mouseX, mouseY);
+    setTimeout(function (){close();}, mil);
+  }
+}
+
+//the following lines of code (roughly 550 - 560, for those curious)
+//are what displays the imagery whenever you put in a letter or number
+//i have also included an image for one word at the time
+//that i'm typing this. will add more when i can
 function displayLetterOrName(){
   if (letterOrNumber === "a"){
     grid[8][5] = 1;
@@ -594,7 +639,7 @@ function displayLetterOrName(){
     grid[6][5] = 1;
   }
     
-  if (letterOrNumber === "love"){
+  if (letterOrNumber === "love"){ //this is to hopefully make you feel better
     textSize(20);
     stroke("black")
     fill("grey");
@@ -615,5 +660,10 @@ function displayLetterOrName(){
     grid[3][4] = 1;
     grid[2][3] = 1;
     grid[2][2] = 1;
+  }
+  if (letterOrNumber === " " || letterOrNumber === ""){ //this is just in case you dont put anything in, and instead put in a blank space
+    counter += 1;
+    letterOrNumber = prompt("Please put something in!");
+    return letterOrNumber;
   }
 }
