@@ -20,20 +20,32 @@ class Bubble {
     this.dy = -3;
     this.radius = random(20, 40);
     this.theta = 0;
+    this.isAlive = 0;
+    this.whenIDied = 0;
+    this.timeTillDeath = 1000;
   }
 
   move(){
-    this.x += this.dx;
+    if (this.y - this.radius >= 0){
+      this.x += this.dx;
     this.y += this.dy;
 
-    this.dx = noise((this.theta),0, 1, -5, 5);
-    this.theta += 0.1;
+    this.dx = noise(this.theta,0, 1, -5, 5);
+    this.theta += 0.02;
+    }
+    else {
+      this.isAlive = false;
+    }
   }
   
-display(){
-  noStroke();
-  fill("black");
-  ellipse(this.x, this.y, this.radius *2, this.radius * 2);
-}
+  display(){
+    if (this.isAlive = true){
+    noStroke();
+    fill("black");
+    ellipse(this.x, this.y, this.radius *2, this.radius * 2);
+    }
+    else{
 
+    }
+  }
 }
