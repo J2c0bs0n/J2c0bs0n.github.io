@@ -59,7 +59,7 @@ function keyPressed(){
     }
     else if (key === "`" ){
       grid = createEmptyGrid(10, 10);
-      letterOrNumber = prompt("Put in a number or letter again please!");
+      letterOrNumber = prompt("Put in a number or letter again please! Also, there will be a slight delay every time you press this button.");
       return letterOrNumber;
     }
 }
@@ -592,16 +592,27 @@ function displayLetterOrName(){
     grid[5][4] = 1;
     grid[6][5] = 1;
   }
-  
-  if (letterOrNumber === "love"){
     
+  if (letterOrNumber === "love"){
     textSize(20);
     stroke("black")
     fill("grey");
     text("You are loved user! Please know that, even if it doesn't seem like it.", mouseX, mouseY);
-    grid = createEmptyGrid(15,15);
-    return grid;
     grid[4][1] = 1;
     grid[5][1] = 1;
+    grid[6][2] = 1;
+    grid[7][3] = 1;
+    grid[8][4] = 1;
+    grid[7][5] = 1;
+    grid[6][6] = 1;
+    grid[5][7] = 1;
+    grid[4][7] = 1;
+    grid[3][7] = 1;
+    grid[3][1] = 1;
+    grid[2][6] = 1;
+    grid[2][5] = 1;
+    grid[3][4] = 1;
+    grid[2][3] = 1;
+    grid[2][2] = 1;
   }
 }
