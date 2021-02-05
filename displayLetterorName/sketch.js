@@ -72,7 +72,7 @@ function keyPressed(){
     }
 }
 
-function counterCheckUp(){
+function counterCheckUp(){ //this just shows a message everytime you press one of the two buttons a certain amount of time
   if (counter === 100){
     textSize(20);
     stroke("black");
@@ -85,19 +85,19 @@ function counterCheckUp(){
     fill("grey");
     text("Please stop", mouseX, mouseY);
   }
-  else if (counter === 15){
+  else if (counter === 45){
     textSize(20);
     stroke("black");
     fill("grey");
     text("Ok, if this is a joke, it's no longer funny", mouseX, mouseY);
   }
-  else if (counter === 25){
+  else if (counter === 85){
     textSize(20);
     stroke("black");
     fill("grey");
     text("Stop", mouseX, mouseY);
   }
-  else if (counter === 1){
+  else if (counter === 1000000){
     textSize(20);
     stroke("black");
     fill("grey");
