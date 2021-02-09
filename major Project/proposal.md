@@ -16,3 +16,8 @@ For my major project, I will be attempting to make a choose your own adventure g
 - Spell Creation (Same situation as Crafting System)
 - A box for multiple choice
 - Combat
+
+
+## List of Completed Proposals
+- A means of inputing your answer
+- Filler Text

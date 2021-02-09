@@ -1,6 +1,9 @@
 //Major Project
+let choice;
 
 let name;
+
+let theGameBegin = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -10,7 +13,7 @@ function draw() {
   background("black");
   displayText();
   keyPressed();
-  beginName();
+  chapter1();
 }
 
 function displayText(){
@@ -25,8 +28,15 @@ function keyPressed(){
     createCanvas(windowWidth, windowHeight);
     background("black");
     textSize(20);
-    name = prompt("What is your name?", 659, 384);
+    name = prompt("What is your name?");
     return name;
+  }
+  if (key === "a" && theGameBegin === 1){
+    textSize(20);
+    stroke("black");
+    fill("white");
+    text("You wake up in a thick forest. You know not of who you are, where you are, or why you're there.", mouseX, mouseY);
+    choice = prompt("What do you do?");
   }
 }
 
@@ -34,5 +44,6 @@ function chapter1(){
   textSize(20);
   stroke("black");
   fill("white");
-  text("Hello" + name + "!The game shall now begin!", 559, 384);
+  text("Hello " +name+ "!To begin the game, press the a button.", mouseX, mouseY);
+  theGameBegin === 1;
 }
