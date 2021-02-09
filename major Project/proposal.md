@@ -3,9 +3,9 @@ For my major project, I will be attempting to make a choose your own adventure g
 
 ## Need's To Have
 - A means of inputing your answer
-- A box for multiple choice
 - Music
 - Inventory
+- A short story
 
 ## Nice To Have
 - A means of remembering past choices
@@ -14,3 +14,5 @@ For my major project, I will be attempting to make a choose your own adventure g
 - An improved User Interface(UI)
 - Crafting System (Most likely won't have time for)
 - Spell Creation (Same situation as Crafting System)
+- A box for multiple choice
+- Combat
