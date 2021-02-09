@@ -2,7 +2,6 @@
 For my major project, I will be attempting to make a choose your own adventure game. It will include a basic form of combat, an inventory, and multiple choices.
 
 ## Need's To Have
-- Combat
 - A means of inputing your answer
 - A box for multiple choice
 - Music
