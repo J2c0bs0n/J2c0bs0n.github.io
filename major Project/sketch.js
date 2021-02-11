@@ -27,7 +27,7 @@ function keyPressed() {
     stroke("black");
     fill("white");
     choice = prompt(dialogueText[2]);
-    if (choice === "okay"){
+    if (choice !== undefined){
       choice = prompt(dialogueText[0])
     }
     else if(choice === "" || choice === " "){
@@ -42,6 +42,9 @@ function chapter1() {
     stroke("black");
     fill("white");
     text("Hello " + name + "! To begin the game, press the a button.", mouseX, mouseY);
+  }
+  if (choice === "turn left"){
+    choice = prompt ("You see a wall of trees, what do you do?");
   }
 }
 
