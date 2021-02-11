@@ -16,6 +16,7 @@ For my major project, I will be attempting to make a choose your own adventure g
 - A box for multiple choice
 - Combat
 - Inventory
+- Cleaner Code (if code is to messy)
 
 
 ## List of Completed Proposals
