@@ -11,9 +11,6 @@ For my major project, I will be attempting to make a choose your own adventure g
 - Imagery
 - Video(?)
 - An improved User Interface(UI)
-- Crafting System (Most likely won't have time for)
-- Spell Creation (Same situation as Crafting System)
-- A box for multiple choice
 - Combat
 - Inventory
 - Cleaner Code (if code is to messy)
