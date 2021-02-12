@@ -1,19 +1,30 @@
 //Norcay
 //Austin Connell
 //2/11/2021
-let dialogueText = ["What do you do?","What is your name?", `You wake up in a dense forest, of which you don't recognize. 
-You don't know who you are, or where you came from. All you know, is that you need to get out.`, "You see a wall of trees.",
-"You see an empty tree stump, but nothing else of notice.","You see a path ahead of you.",
+
+//this array is for easier reading of dialogue, and it is spaced out to better keep track of which line is which part of the array
+let dialogueText = ["What do you do?",
+"What is your name?", 
+`You wake up in a dense forest, of which you don't recognize. You don't know who you are, or where you came from. 
+All you know, is that you need to get out.`, 
+"You see a wall of trees.",
+"You see an empty tree stump, but nothing else of notice.",
+"You see a path ahead of you.",
 "You appear to be in an open patch of grass. You don't really see much else.",
-"You see a key inside. It looks normal. Do you want pick it up?","You now have a key. You go back to where you were before.",
-"Got it, you go back to where you were standing before.","The stump is empty, because you took the key.",
+"You see a key inside. It looks normal. Do you want pick it up?",
+"You now have a key. You go back to where you were before.",
+"Got it, you go back to where you were standing before.",
+"The stump is empty, because you took the key.",
 "You see the key you picked up. It looks like an average key, but something seems off for some reason",
 "You see a wooden door in front of you. Moss, vines, and other plant life have grown on, in, and around it.",
-"You're at the door now. You see a keyhole. Do you wish to use the key?",`You open the door. You see a path, going in two directions.
-They both appear to have been used for who knows how long. Do you wish to go down the path?`,`You go to where the fork in the path starts. 
-As you reach the spot, you realize to late that the door behind you is gone. All you can do, is go down one of the two paths. Which do you go down?
-Left, or Right?`,`You go down your chosen path. To be continued... Hope you enjoyed the game!
-To play again, you will have to run the code again, for this game shall now self-destruct.`,];
+"You're at the door now. You see a keyhole. Do you wish to use the key?",
+`You open the door. You see a path, going in two directions.They both appear to have been used for who knows how long.
+Do you wish to go down the path?`,
+`You go to where the fork in the path starts. As you reach the spot, you realize to late that the door behind you is gone.
+All you can do, is go down one of the two paths. Which do you go down? Left, or Right?`,
+`You go down your chosen path. To be continued... Hope you enjoyed the game!
+To play again, you will have to run the code again, for this game shall now self-destruct.`,
+"Got it. You go back to where you were standing before.",];
 
 let name;
 
@@ -22,6 +33,8 @@ let choice;
 let counter = 0;
 
 let theKey= 0;
+
+let mil = 5000;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -121,6 +134,15 @@ function chapter2(){
     counter += 1;
     theKey -= 1;
   }
+  else if (choice === "no" && counter === 4){
+    choice = prompt(dialogueText[17])
+  }
+  else if (choice === "look south" && counter === 4){
+    dialogueText[5]
+  }
+  else if (choice === "look north" && counter === 4){
+    choice = prompt (dialogueText[12]);
+  }
 }
 
 function chapter3(){
@@ -132,5 +154,13 @@ function chapter3(){
     stroke("black");
     fill("white");
     text(dialogueText[16], 559, 384);
+    setTimeout(function (){close();}, mil);
+  }
+  else if ( choice === "right"){
+    textSize(20);
+    stroke("black");
+    fill("white");
+    text(dialogueText[16], 559, 384);
+    setTimeout(function (){close();}, mil);
   }
 }
