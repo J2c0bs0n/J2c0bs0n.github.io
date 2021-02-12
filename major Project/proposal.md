@@ -7,7 +7,7 @@ For my major project, I will be attempting to make a choose your own adventure g
 - A short story
 
 ## Nice To Have
-- A means of remembering past choices
+- A means of saving your game
 - Imagery
 - Video(?)
 - An improved User Interface(UI)

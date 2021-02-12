@@ -117,7 +117,6 @@ function showMessage() {
     fill("white");
     text("Welcome to Norcay! Press the spacebar to start the game!", 559, 384);
   }
-
 }
 
 function chapter2(){
@@ -136,12 +135,19 @@ function chapter2(){
   }
   else if (choice === "no" && counter === 4){
     choice = prompt(dialogueText[17])
+    counter -= 2;
   }
-  else if (choice === "look south" && counter === 4){
+  else if (choice === "look south" && counter === 2){
     dialogueText[5]
   }
-  else if (choice === "look north" && counter === 4){
+  else if (choice === "look north" && counter === 2){
     choice = prompt (dialogueText[12]);
+  }
+  else if (choice === "look east" && counter === 2){
+    choice = prompt(dialogueText[3])
+  }
+  else if (choice === "look west" && counter === 2){
+    choice = prompt(dialogueText[3]);
   }
 }
 
