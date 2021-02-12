@@ -2,6 +2,10 @@
 //Austin Connell
 //2/11/2021
 
+
+//If you're having trouble getting around in the game, refer to the code for help
+
+
 //this array is for easier reading of dialogue, and it is spaced out to better keep track of which line is which part of the array
 let dialogueText = ["What do you do?",
 "What is your name?", 
@@ -26,15 +30,15 @@ All you can do, is go down one of the two paths. Which do you go down? Left, or 
 To play again, you will have to run the code again, for this game shall now self-destruct.`,
 "Got it. You go back to where you were standing before.",];
 
-let name;
+let name; //this is so that you're name is called
 
-let choice;
+let choice; //this is what helps run the game, because without it, this game wouldn't be able to start
 
-let counter = 0;
+let counter = 0; //this helps keep track of certain points of the game
 
-let theKey= 0;
+let theKey= 0; //this adds a bit of exploration
 
-let mil = 5000;
+let mil = 5000; //this helps time when the program closes
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -51,7 +55,7 @@ function draw() {
 function keyPressed() {
   if (key === " ") {
     createCanvas(windowWidth, windowHeight);
-    background("black");
+    background("black");                      //this starts the game, and permanently sets your name to a value
     textSize(20);
     name = prompt(dialogueText[1]);
   }
@@ -60,7 +64,7 @@ function keyPressed() {
     stroke("black");
     fill("white");
     choice = prompt(dialogueText[2]);
-    if (choice !== undefined){
+    if (choice !== undefined){ //this is for easy transition to the next question
       choice = prompt(dialogueText[0]);
     }
     
@@ -70,7 +74,7 @@ function keyPressed() {
 function chapter1() {
   if (key !== "a" && key === " "){
     textSize(20);
-    stroke("black");
+    stroke("black");                //this helps you bring the prompt to life
     fill("white");
     text("Hello " + name + "! To begin the game, press the a button. To remove this message, cancel the prompt, then press a.", mouseX, mouseY);
   }
@@ -81,7 +85,7 @@ function chapter1() {
     choice = prompt(dialogueText[4])
   }
   else if (choice === "look north"){
-    choice = prompt(dialogueText[5]);
+    choice = prompt(dialogueText[5]);               //these allow you to explore a bit
   }
   else if (choice === "look east"){
     choice = prompt(dialogueText[3]);
@@ -90,23 +94,23 @@ function chapter1() {
     choice = prompt (dialogueText[6])
   }
   else if (choice === "go to tree stump"){
-    choice = prompt(dialogueText[7])
+    choice = prompt(dialogueText[7])    //this gets the player closer to the end of the game
     counter += 1;
   }
   else if (choice === "yes" && counter === 1){
-    choice = prompt(dialogueText[8])
+    choice = prompt(dialogueText[8])   //this gives the player the key
     counter -=1;
     theKey += 1;
   }
   else if(choice === "no" && counter === 1){
-    choice = prompt(dialogueText[9]);
+    choice = prompt(dialogueText[9]);    //this resets the player to their last location, in case if they choose no
     counter -= 1;
   }
   else if (choice === "go to the tree stump" && theKey === 1){
-    choice = prompt(dialogueText[10]);
+    choice = prompt(dialogueText[10]);  //just flavour text
   }
   else if (choice === "check key"){
-    choice = prompt(dialogueText[11])
+    choice = prompt(dialogueText[11])    //this gives the player the ability to look at the key
   }
 }
 
@@ -114,27 +118,27 @@ function showMessage() {
   if (key !== " " && key !== "a") {
     textSize(20);
     stroke("black");
-    fill("white");
+    fill("white");                  //this just helps start the game
     text("Welcome to Norcay! Press the spacebar to start the game!", 559, 384);
   }
 }
 
 function chapter2(){
   if (choice === "go down path"){
-    choice = prompt(dialogueText[12]);
+    choice = prompt(dialogueText[12]);  //this progresses the game
     counter += 2;
   }
   else if (choice === "go to door"){
-    choice = prompt(dialogueText[13]);
+    choice = prompt(dialogueText[13]);  //this brings the player closer to the end
     counter += 2;
   }
   else if (choice === "yes" && counter === 4){
-    choice = prompt(dialogueText[14]);
+    choice = prompt(dialogueText[14]);  //almost to the end!
     counter += 1;
     theKey -= 1;
   }
   else if (choice === "no" && counter === 4){
-    choice = prompt(dialogueText[17])
+    choice = prompt(dialogueText[17])   //very close to the end
     counter -= 2;
   }
   else if (choice === "look south" && counter === 2){
@@ -142,7 +146,7 @@ function chapter2(){
   }
   else if (choice === "look north" && counter === 2){
     choice = prompt (dialogueText[12]);
-  }
+  }                                                           //these are similar to chapter1, with north and south being slightly different
   else if (choice === "look east" && counter === 2){
     choice = prompt(dialogueText[3])
   }
@@ -152,7 +156,7 @@ function chapter2(){
 }
 
 function chapter3(){
-  if (choice === "yes" && counter === 5){
+  if (choice === "yes" && counter === 5){  //this brings the player almost to the end
     choice = prompt(dialogueText[15]);
   }
   else if (choice === "left"){
@@ -161,7 +165,7 @@ function chapter3(){
     fill("white");
     text(dialogueText[16], 559, 384);
     setTimeout(function (){close();}, mil);
-  }
+  }                                             //these two end the game after showing the same message as each other
   else if ( choice === "right"){
     textSize(20);
     stroke("black");

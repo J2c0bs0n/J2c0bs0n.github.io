@@ -3,19 +3,19 @@ For my major project, I will be attempting to make a choose your own adventure g
 
 ## Need's To Have
 - A means of inputing your answer
-- Music
 - A short story
 
-## Nice To Have
-- A means of saving your game
+## Nice To Have(In order of importance)
+- Cleaner Code (if code is to messy)
+- Music
 - Imagery
 - Video(?)
-- An improved User Interface(UI)
-- Combat
 - Inventory
-- Cleaner Code (if code is to messy)
+- Combat
+- A means of saving your game
+- An improved User Interface(UI)
 
 
 ## List of Completed Proposals
 - A means of inputing your answer
-- Filler Text
+- A short story
