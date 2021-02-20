@@ -11,3 +11,9 @@
   - Finished first checkpoint of game
   - Finished second checkpoint of game
   - Finished final checkpoint of game
+
+## 2/19/2021
+  - Technical Issues resolved
+  - 8:38 PM Audio Issues. Currently working on.
+  - Explanation for constant change of Proposals:
+     - Constant realization of high standards for low time

@@ -40,6 +40,8 @@ let theKey= 0; //this adds a bit of exploration
 
 let mil = 5000; //this helps time when the program closes
 
+let song;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
@@ -67,7 +69,6 @@ function keyPressed() {
     if (choice !== undefined){ //this is for easy transition to the next question
       choice = prompt(dialogueText[0]);
     }
-    
   }
 }
 

@@ -5,15 +5,12 @@ For my major project, I will be attempting to make a choose your own adventure g
 - A means of inputing your answer
 - A short story
 
-## Nice To Have(In order of importance)
+## Nice To Have
 - Cleaner Code (if code is to messy)
 - Music
 - Imagery
 - Video(?)
 - Inventory
-- Combat
-- A means of saving your game
-- An improved User Interface(UI)
 
 
 ## List of Completed Proposals
