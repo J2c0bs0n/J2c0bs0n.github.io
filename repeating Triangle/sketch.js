@@ -6,6 +6,8 @@ let triangleVertices = [
   {x: 700, y: 600}
 ];
 
+let numOfTri = 0;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   console.log(getMidpoint(triangleVertices[0], triangleVertices[1]));
@@ -13,13 +15,31 @@ function setup() {
 
 function draw() {
   background(220);
-  sierpinski(triangleVertices);
+  sierpinski(triangleVertices, numOfTri);
 }
 
-function sierpinski(points){
+function sierpinski(points, depth){
   triangle(points[0].x, points[0].y, 
-    points[1].x, points[1].y, 
-    points[2].x, points[2].y);
+           points[1].x, points[1].y, 
+           points[2].x, points[2].y);
+  if (depth > 0){
+    sierpinski([points[1],
+                getMidpoint(points[0], points[1]),
+                getMidpoint(points[1], points[2])],
+                depth - 1);
+    sierpinski([points[0],
+                getMidpoint(points[0], points[1]),
+                getMidpoint(points[0], points[2])],
+                depth - 1);
+    sierpinski([points[2],
+                getMidpoint(points[0], points[2]),
+                getMidpoint(points[1], points[2])],
+                depth - 1);
+    }
+}
+
+function mousePressed(){
+  numOfTri++;
 }
 
 function getMidpoint(point1, point2){
