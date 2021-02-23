@@ -72,11 +72,8 @@ function keyPressed() {
     stroke("black");
     fill("white");
     choice = prompt(dialogueText[2]);
-    if (choice !== undefined){        //this is for easy transition to the next question
-      choice = prompt(dialogueText[0]);
-    }
-    
-  }
+    choice = prompt(dialogueText[0]);
+    }   
 }
 
 function chapter1() {
@@ -189,5 +186,5 @@ function chapter3(){
 }
 
 
-//resources used:
-//https://commons.wikimedia.org/wiki/File:Forest_path_and_trees.jpg
+//site(s) used:
+//https://opengameart.org/

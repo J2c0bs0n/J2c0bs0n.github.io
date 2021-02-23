@@ -8,8 +8,7 @@ For my major project, I will be attempting to make a choose your own adventure g
 ## Nice To Have
 - Cleaner Code (if code is to messy)
 - Music
-- Imagery
-- Inventory
+- Inventory(for longer story)
 - Longer Story(If time allows)
 
 
