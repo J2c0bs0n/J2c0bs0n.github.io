@@ -10,8 +10,10 @@ For my major project, I will be attempting to make a choose your own adventure g
 - Music
 - Imagery
 - Inventory
+- If time warrants it, a longer story
 
 
 ## List of Completed Proposals
 - A means of inputing your answer
 - A short story
+- Music

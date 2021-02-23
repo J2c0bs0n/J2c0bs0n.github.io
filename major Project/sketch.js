@@ -7,29 +7,29 @@
 
 
 //this array is for easier reading of dialogue, and it is spaced out to better keep track of which line is which part of the array
-let dialogueText = ["What do you do?",
-"What is your name?", 
+let dialogueText = ["What do you do?", //0
+"What is your name?", //1
 `You wake up in a dense forest, of which you don't recognize. You don't know who you are, or where you came from. 
-All you know, is that you need to get out.`, 
-"You see a wall of trees.",
-"You see an empty tree stump, but nothing else of notice.",
-"You see a path ahead of you.",
-"You appear to be in an open patch of grass. You don't really see much else.",
-"You see a key inside. It looks normal. Do you want pick it up?",
-"You now have a key. You go back to where you were before.",
-"Got it, you go back to where you were standing before.",
-"The stump is empty, because you took the key.",
-"You see the key you picked up. It looks like an average key, but something seems off for some reason",
-"You see a wooden door in front of you. Moss, vines, and other plant life have grown on, in, and around it.",
-"You're at the door now. You see a keyhole. Do you wish to use the key?",
-`You open the door. You see a path, going in two directions.They both appear to have been used for who knows how long.
-Do you wish to go down the path?`,
+All you know, is that you need to get out.`, //2
+"You see a wall of trees.", //3
+"You see an empty tree stump, but nothing else of notice.", //4
+"You see a path ahead of you.", //5 
+"You appear to be in an open patch of grass. You don't really see much else.", //6
+"You see a key inside. It looks normal. Do you want pick it up?", //7
+"You now have a key. You go back to where you were before.", //8
+"Got it, you go back to where you were standing before.", //9
+"The stump is empty, because you took the key.", //10
+"You see the key you picked up. It looks like an average key, but something seems off for some reason", //11
+"You see a wooden door in front of you. Moss, vines, and other plant life have grown on, in, and around it.", //12
+"You're at the door now. You see a keyhole. Do you wish to use the key?", //13                                           //These are just to find out which part of the array is which
+`You open the door. You see a path, going in two directions.They both appear to have been used for who knows how long
+Do you wish to go down the path?`, //14
 `You go to where the fork in the path starts. As you reach the spot, you realize to late that the door behind you is gone.
-All you can do, is go down one of the two paths. Which do you go down? Left, or Right?`,
+All you can do, is go down one of the two paths. Which do you go down? Left, or Right?`, //15
 `You go down your chosen path. To be continued... Hope you enjoyed the game!
-To play again, you will have to run the code again, for this game shall now self-destruct.`,
-"Got it. You go back to where you were standing before.",
-"You go down the path, and you're back at where you started."];
+To play again, you will have to run the code again, for this game shall now self-destruct.`, //16
+"Got it. You go back to where you were standing before.", //17
+"You go down the path, and you're back at where you started."]; //18
 
 let name; //this is so that you're name is called
 
@@ -41,8 +41,11 @@ let theKey= 0; //this adds a bit of exploration
 
 let mil = 5000; //this helps time when the program closes
 
+let music;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  music = loadSound("assets/Woodland_Fantasy.mp3");
 }
 
 function draw() {
@@ -51,6 +54,7 @@ function draw() {
   chapter2();
   chapter3();
   showMessage();
+  music.play();
 }
 
 function keyPressed() {
