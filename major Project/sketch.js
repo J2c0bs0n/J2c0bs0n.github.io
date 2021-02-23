@@ -28,7 +28,8 @@ Do you wish to go down the path?`,
 All you can do, is go down one of the two paths. Which do you go down? Left, or Right?`,
 `You go down your chosen path. To be continued... Hope you enjoyed the game!
 To play again, you will have to run the code again, for this game shall now self-destruct.`,
-"Got it. You go back to where you were standing before.",];
+"Got it. You go back to where you were standing before.",
+"You go down the path, and you're back at where you started."];
 
 let name; //this is so that you're name is called
 
@@ -39,8 +40,6 @@ let counter = 0; //this helps keep track of certain points of the game
 let theKey= 0; //this adds a bit of exploration
 
 let mil = 5000; //this helps time when the program closes
-
-let song;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -66,9 +65,10 @@ function keyPressed() {
     stroke("black");
     fill("white");
     choice = prompt(dialogueText[2]);
-    if (choice !== undefined){ //this is for easy transition to the next question
+    if (choice !== undefined){        //this is for easy transition to the next question
       choice = prompt(dialogueText[0]);
     }
+    
   }
 }
 
@@ -143,7 +143,10 @@ function chapter2(){
     counter -= 2;
   }
   else if (choice === "look south" && counter === 2){
-    dialogueText[5]
+    choice = prompt ("You see the path you came from. Do you go back?")
+  }
+  else if (choice === "yes" && counter === 2){
+    choice = prompt(dialogueText[18]);
   }
   else if (choice === "look north" && counter === 2){
     choice = prompt (dialogueText[12]);
@@ -157,7 +160,7 @@ function chapter2(){
 }
 
 function chapter3(){
-  if (choice === "yes" && counter === 5){  //this brings the player almost to the end
+  if (choice === "yes" && counter === 5){       //this brings the player almost to the end
     choice = prompt(dialogueText[15]);
   }
   else if (choice === "left"){
