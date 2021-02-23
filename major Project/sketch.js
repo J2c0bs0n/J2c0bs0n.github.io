@@ -43,9 +43,13 @@ let mil = 5000; //this helps time when the program closes
 
 let music;
 
+function preload(){
+  music = loadSound("assets/Woodland_Fantasy.mp3");
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  music = loadSound("assets/Woodland_Fantasy.mp3");
+  music.play();
 }
 
 function draw() {
@@ -54,7 +58,6 @@ function draw() {
   chapter2();
   chapter3();
   showMessage();
-  music.play();
 }
 
 function keyPressed() {
@@ -87,7 +90,7 @@ function chapter1() {
     choice = prompt (dialogueText[3]);
   }
   else if (choice === "look south"){
-    choice = prompt(dialogueText[4])
+    choice = prompt(dialogueText[4]);
   }
   else if (choice === "look north"){
     choice = prompt(dialogueText[5]);               //these allow you to explore a bit
@@ -146,11 +149,12 @@ function chapter2(){
     choice = prompt(dialogueText[17])   //very close to the end
     counter -= 2;
   }
-  else if (choice === "look south" && counter === 2){
-    choice = prompt ("You see the path you came from. Do you go back?")
+  else if (choice === "look behind" && counter === 2){
+    choice = prompt ("You see the path you came from. Do you go back?");
   }
   else if (choice === "yes" && counter === 2){
     choice = prompt(dialogueText[18]);
+    choice = prompt(dialogueText[6]);
     counter -= 2;
   }
   else if (choice === "look north" && counter === 2){
@@ -183,3 +187,7 @@ function chapter3(){
     setTimeout(function (){close();}, mil);
   }
 }
+
+
+//resources used:
+//https://commons.wikimedia.org/wiki/File:Forest_path_and_trees.jpg

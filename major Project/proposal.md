@@ -10,7 +10,7 @@ For my major project, I will be attempting to make a choose your own adventure g
 - Music
 - Imagery
 - Inventory
-- If time warrants it, a longer story
+- Longer Story(If time allows)
 
 
 ## List of Completed Proposals

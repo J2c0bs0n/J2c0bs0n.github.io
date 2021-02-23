@@ -17,3 +17,6 @@
   - 8:38 PM Audio Issues. Currently working on.
   - Explanation for constant change of Proposals:
      - Constant realization of high standards for low time
+
+# 2/23/2021
+  - Fixed minor error
