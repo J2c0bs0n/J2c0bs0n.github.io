@@ -9,7 +9,6 @@ For my major project, I will be attempting to make a choose your own adventure g
 - Cleaner Code (if code is to messy)
 - Music
 - Imagery
-- Video(?)
 - Inventory
 
 
