@@ -147,6 +147,7 @@ function chapter2(){
   }
   else if (choice === "yes" && counter === 2){
     choice = prompt(dialogueText[18]);
+    counter -= 2;
   }
   else if (choice === "look north" && counter === 2){
     choice = prompt (dialogueText[12]);
