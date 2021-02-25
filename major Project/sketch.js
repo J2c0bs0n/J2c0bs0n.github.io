@@ -6,7 +6,8 @@
 //If you're having trouble getting around in the game, refer to the code for help
 
 
-//this array is for easier reading of dialogue, and it is spaced out to better keep track of which line is which part of the array
+//this array is for easier reading of dialogue, and it is spaced out to better keep 
+//track of which line is which part of the array, with comments for added help
 let dialogueText = ["What do you do?", //0
 "What is your name?", //1
 `You wake up in a dense forest, of which you don't recognize. You don't know who you are, or where you came from. 
@@ -21,7 +22,7 @@ All you know, is that you need to get out.`, //2
 "The stump is empty, because you took the key.", //10
 "You see the key you picked up. It looks like an average key, but something seems off for some reason", //11
 "You see a wooden door in front of you. Moss, vines, and other plant life have grown on, in, and around it.", //12
-"You're at the door now. You see a keyhole. Do you wish to use the key?", //13                                           //These are just to find out which part of the array is which
+"You're at the door now. You see a keyhole. Do you wish to use the key?", //13
 `You open the door. You see a path, going in two directions.They both appear to have been used for who knows how long
 Do you wish to go down the path?`, //14
 `You go to where the fork in the path starts. As you reach the spot, you realize to late that the door behind you is gone.
@@ -156,7 +157,7 @@ function chapter2(){
   }
   else if (choice === "look north" && counter === 2){
     choice = prompt (dialogueText[12]);
-  }                                                           //these are similar to chapter1, with north and south being slightly different
+  }                                                           //these are similar to chapter1, with north being slightly different
   else if (choice === "look east" && counter === 2){
     choice = prompt(dialogueText[3])
   }
