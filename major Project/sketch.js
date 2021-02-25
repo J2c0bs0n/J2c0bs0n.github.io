@@ -19,30 +19,52 @@ All you know, is that you need to get out.`, //2
 "You see a key inside. It looks normal. Do you want pick it up?", //7
 "You now have a key. You go back to where you were before.", //8
 "Got it, you go back to where you were standing before.", //9
-"The stump is empty, because you took the key.", //10
-"You see the key you picked up. It looks like an average key, but something seems off for some reason", //11
-"You see a wooden door in front of you. Moss, vines, and other plant life have grown on, in, and around it.", //12
-"You're at the door now. You see a keyhole. Do you wish to use the key?", //13
+"The stump is empty, because you took the key.",]; //10
+
+                                                                  //these are to help breakup this area for evenly, so it's easier on the eyes 
+
+let continuedDialogue = ["You see the key you picked up. It looks like an average key, but something seems off for some reason", //0
+"You see a wooden door in front of you. Moss, vines, and other plant life have grown on, in, and around it.", //1
+"You're at the door now. You see a keyhole. Do you wish to use the key?", //2
 `You open the door. You see a path, going in two directions.They both appear to have been used for who knows how long
-Do you wish to go down the path?`, //14
+Do you wish to go down the path?`, //3
 `You go to where the fork in the path starts. As you reach the spot, you realize to late that the door behind you is gone.
-All you can do, is go down one of the two paths. Which do you go down? Left, or Right?`, //15
-`You go down your chosen path. To be continued... Hope you enjoyed the game!
-To play again, you will have to run the code again, for this game shall now self-destruct.`, //16
-"Got it. You go back to where you were standing before.", //17
-"You go down the path, and you're back at where you started."]; //18
+All you can do, is go down one of the two paths. Which do you go down? Left, or Right?`, //4
+`You go down your chosen path. Once you reach the other end, you realize that both paths connect to the same spot, so it didn't matter in the end.
+You wonder who made this path, and why they made it this way.`, //5
+"Got it. You go back to where you were standing before.", //6
+"You go down the path, and you're back at where you started.",//7
+`You decide to go back down both paths, only to see nothing has changed. So, you go back down where you were heading.
+At the end, you see another fork in the road, with a sign in the middle.`,//8
+`You go up to the sign. It points in two directions. One arrow says 'Norcay
+The Town of Magic'. 
+The other appears to be vandalized, with the only readable parts being 'T     e   n
+
+D  
+   t
+ o 
+pa'. You go back to where you were standing.`,//9
+`You see that the path has been blocked by trees. The trees near it seem to thick to try and go around, and who knows how long it'll take to get around.
+You decide not to go down.`]; //10
+
+let inTown = [`You don't see the path you came from, instead all you see are trees. This is getting old now.`,//0
+"You see a path that leads to a town.You decide to go down, since it's currently the best option.",//1
+`Congrats on reaching this point of the game! There currently isn't anything else for you to do.
+There will be more content in the future, so you'll have to wait in the mean time. To close this window, type CLOSE, and it should do it's job!
+Hope you have a great day!`,//2
+];
 
 let name; //this is so that you're name is called
 
 let choice; //this is what helps run the game, because without it, this game wouldn't be able to start
 
-let counter = 0; //this helps keep track of certain points of the game
+let counter = 0; //this helps keep track of certain points of the first three "chapters" of the game
+
+let townCounter = 0; //this is for the town interaction
 
 let theKey= 0; //this adds a bit of exploration
 
-let mil = 5000; //this helps time when the program closes
-
-let music;
+let music;  //this plays the sound you hear
 
 function preload(){
   music = loadSound("assets/Woodland_Fantasy.mp3");
@@ -55,9 +77,10 @@ function setup() {
 
 function draw() {
   background("black");
-  chapter1();
-  chapter2();
-  chapter3();
+  awaken();
+  keyFinder();
+  freedom();
+  norcaytown();
   showMessage();
 }
 
@@ -77,7 +100,7 @@ function keyPressed() {
     }   
 }
 
-function chapter1() {
+function awaken() {
   if (key !== "a" && key === " "){
     textSize(20);
     stroke("black");                //this helps you bring the prompt to life
@@ -116,7 +139,7 @@ function chapter1() {
     choice = prompt(dialogueText[10]);  //just flavour text
   }
   else if (choice === "check key"){
-    choice = prompt(dialogueText[11])    //this gives the player the ability to look at the key
+    choice = prompt(continuedDialogue[0])    //this gives the player the ability to look at the key
   }
 }
 
@@ -129,35 +152,35 @@ function showMessage() {
   }
 }
 
-function chapter2(){
+function keyFinder(){
   if (choice === "go down path"){
-    choice = prompt(dialogueText[12]);  //this progresses the game
+    choice = prompt(continuedDialogue[1]);  //this progresses the game
     counter += 2;
   }
   else if (choice === "go to door"){
-    choice = prompt(dialogueText[13]);  //this brings the player closer to the end
+    choice = prompt(continuedDialogue[2]);  //this brings the player closer to the end
     counter += 2;
   }
   else if (choice === "yes" && counter === 4){
-    choice = prompt(dialogueText[14]);  //almost to the end!
+    choice = prompt(continuedDialogue[3]);  //almost to the end!
     counter += 1;
     theKey -= 1;
   }
   else if (choice === "no" && counter === 4){
-    choice = prompt(dialogueText[17])   //very close to the end
+    choice = prompt(continuedDialogue[6])   //very close to the end
     counter -= 2;
   }
   else if (choice === "look behind" && counter === 2){
     choice = prompt ("You see the path you came from. Do you go back?");
   }
   else if (choice === "yes" && counter === 2){
-    choice = prompt(dialogueText[18]);
+    choice = prompt(continuedDialogue[7]);
     choice = prompt(dialogueText[6]);
     counter -= 2;
   }
   else if (choice === "look north" && counter === 2){
     choice = prompt (dialogueText[12]);
-  }                                                           //these are similar to chapter1, with north being slightly different
+  }                                                           //these are similar to awaken, with north being slightly different
   else if (choice === "look east" && counter === 2){
     choice = prompt(dialogueText[3])
   }
@@ -166,23 +189,38 @@ function chapter2(){
   }
 }
 
-function chapter3(){
+function freedom(){
   if (choice === "yes" && counter === 5){       //this brings the player almost to the end
-    choice = prompt(dialogueText[15]);
+    choice = prompt(continuedDialogue[4]);
   }
   else if (choice === "left"){
-    textSize(20);
-    stroke("black");
-    fill("white");
-    text(dialogueText[16], 559, 384);
-    setTimeout(function (){close();}, mil);
+    choice = prompt(continuedDialogue[5]);
+    choice = prompt(continuedDialogue[8]);
+    townCounter += 1;
   }                                             //these two end the game after showing the same message as each other
   else if ( choice === "right"){
-    textSize(20);
-    stroke("black");
-    fill("white");
-    text(dialogueText[16], 559, 384);
-    setTimeout(function (){close();}, mil);
+    choice = prompt(continuedDialogue[5]);
+    choice = prompt(continuedDialogue[8]);
+    townCounter += 1;
+  }
+}
+
+function norcaytown(){
+  if (choice === "look at sign"){
+    choice = prompt(continuedDialogue[9]);
+  }
+  else if (choice === "look left" && townCounter === 1){
+    choice = prompt(continuedDialogue[10]);
+  }
+  else if (choice === "look back" || choice === "look behind" || choice === "look south" && townCounter === 1){
+    choice = prompt(inTown[0]);
+  }
+  else if (choice === "look right" && townCounter === 1){
+    choice = prompt(inTown[1]);
+    choice = prompt(inTown[2]);
+  }
+  else if (choice === "CLOSE" || choice === "Close" || choice === "close" && townCounter === 1){
+    close();
   }
 }
 
