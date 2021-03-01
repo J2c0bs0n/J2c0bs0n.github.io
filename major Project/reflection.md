@@ -17,4 +17,4 @@ There weren't any major problems or challenges while I was working, but I did co
 Overall, I'm happy the game is where it's at, even if it's not very far. 
 The game is nowhere near complete, and it's more of a demo of a game then anything else, but I'm still happy that it exists.
 If there's anything that I would tell my past self about it, is to not start with ridiculously high expectations and standards, and instead start with something small, and work off that.
-Thank you for taking the time out of your day, and using it to read this reflection. I hope you enjoy (or enjoyed if you already played) my game, and I hope you have a great day, night, or afternoon.
+Thank you for taking the time out of your day to read this reflection. I hope you enjoy (or enjoyed if you already played) my game, and I hope you have a great day, night, or afternoon.
