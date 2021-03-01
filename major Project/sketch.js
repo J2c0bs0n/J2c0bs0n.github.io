@@ -49,8 +49,7 @@ You decide not to go down.`]; //10
 
 let inTown = [`You don't see the path you came from, instead all you see are trees. This is getting old now.`,//0
 "You see a path that leads to a town.You decide to go down, since it's currently the best option.",//1
-`Congrats on reaching this point of the game! There currently isn't anything else for you to do.
-There will be more content in the future, so you'll have to wait in the mean time. To close this window, type CLOSE, and it should do it's job!
+`Congrats on reaching this point of the game! There currently isn't anything else for you to do.To close this window, type CLOSE.
 Hope you have a great day!`,//2
 ];
 
